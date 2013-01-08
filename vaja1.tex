@@ -1,0 +1,90 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[cp1250]{inputenc}
+\usepackage{here}
+\usepackage{Sweave}
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{,}{,}
+% \usepackage[nogin]{Sweave} % keep R figure size
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \oddsidemargin  0.0in
+    \evensidemargin 0.0in
+    \textwidth      6.0in
+    \headheight     0.0in
+    \topmargin      -0.75in
+    \textheight=    10.0in
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Alter some LaTeX defaults for better treatment of figures:
+    % See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    % http://mintaka.sdsu.edu/GF/bibliog/latex/floats.html
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}    % max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8} % max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9} % fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}  % allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}  % require fuller float pages
+    % N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}   % require fuller float pages
+
+    % remember to use [htp] or [htpb] for placement
+
+%\newcommand{\R}{\textsf{R }}
+\newcommand{\R}{{\normalfont\textsf{R}}{}}
+\newcommand{\degC}{$^\circ$C} %\hspace{8pt}}
+\newcommand{\degCs}{$^\circ$C\hspace{8pt}}
+%\newtheorem{zakljucek}{\textbf{Zakljuèek}}[section]
+\newcounter{zakljucki}[section]
+\newtheorem{naloga}{Naloga}
+\newenvironment{Naloga}
+    {\begin{naloga}\rm}{\end{naloga}}
+\newenvironment{conclusion}[1][Zakljuèek]
+{\textbf{\\ \bigskip \stepcounter{zakljucki} \hrule \bigskip \noindent #1
+\arabic{section}.\arabic{zakljucki}} \par} {\bigskip \hrule
+\bigskip}
+
+\citeindextrue
+
+\title{Statistika\\Vaja 1}
+\author{Andrej Blejec}
+
+\begin{document}
+\maketitle
+\section{Urejanje podatkov}
+
+\begin{Naloga}
+Za vsako od naštetih merskih lestvic doloèite možne vrednosti in jo opredelite glede na
+vsebino, znaèaj in zveznost. Poskusite dolociti tudi znaèaj pojava, ki ga merimo.
+
+\begin{enumerate}
+    \renewcommand{\theenumi}{\alph{enumi}}
+
+    \item število otrok v družini
+    \item èas od vsaditve semena do kalitve
+    \item Reakcije živali, oznaèene od 1 do 5:
+    \\1 zelo agresivna, 2 agresivna, 3 nevtralna,  4 prestrašena, 5 zelo prestrašena
+    \item število rastlin v poskusnem kvadratu
+    \item pH
+    \item dolžina mišjega repa
+    \item suha teža planktona iz litra vode
+    \item temperatura zraka, merjena vsake pol ure na stopinjo natanèno
+    \item skupno število pik pri metu treh kock
+    \item pozivna telefonska številka kraja
+    \item vrsta domace živali: 1 pes, 2 macka, 3 papiga, 9 drugo
+    \item èas, ki ga potrebuje podgana da pride iz labirinta
+    \item sprememba telesne teže v 6 mesecih (merjena v kg)
+    \item razlika v temperaturi po in pred poskusom (v stopinjah K)
+    \item širina glave merjena kot: 3 široka 2 srednja, 1 ozka
+    \item datum rojstva
+    \renewcommand{\theenumi}{\arabic{enumi}}
+
+\end{enumerate}
+\end{Naloga}
+
+
+\end{document}
